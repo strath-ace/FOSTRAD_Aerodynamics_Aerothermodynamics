@@ -919,7 +919,7 @@ if opt.ThermoFlag == 1
     elseif opt.RN_const_flag == 1
         rN(:) = opt.RmaxRef;
     end
-    mu_w = ViscosityWall_v1([rhoi(hInd,2:5), rhoi(hInd,7), rhoi(hInd,1), rhoi(hInd,6)], Tw);   %Function for computing viscosity using sutherlands formulation for the boundary layer
+    mu_w = ViscosityWall([rhoi(hInd,2:5), rhoi(hInd,7), rhoi(hInd,1), rhoi(hInd,6)], Tw);   %Function for computing viscosity using sutherlands formulation for the boundary layer
     dudx = repmat((1./rN),1,Nalt) .* repmat((sqrt(2.*(P02(hInd)-P(hInd))./rhos(hInd)))',Nfaces,1);
     Re0 = repmat(2*rN,1,Nalt) .* repmat(Re0norm(hInd)',Nfaces,1);   % Defined with the Diameter for SCARAB formulation
 
