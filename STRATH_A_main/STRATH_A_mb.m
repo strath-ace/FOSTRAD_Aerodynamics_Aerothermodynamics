@@ -1,7 +1,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FOSTRAD: The Free Open Source Tool for Re-entry of Asteroids and Debris %%
-%%%%%%%%  Copyright (C) 2018 University of Strathclyde and Authors %%%%%%%%%%
+%%%%%%%%  Copyright (C) 2021 University of Strathclyde and Authors %%%%%%%%%%
 %%%%%%%%             Aerospace Centre of Excellence,               %%%%%%%%%%
 %%%%%%%%           Mechanical and Aerospace Engineering            %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
