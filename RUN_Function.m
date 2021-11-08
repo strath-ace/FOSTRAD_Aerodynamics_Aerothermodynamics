@@ -88,7 +88,7 @@ Roll= 0;   % [deg]  roll angle
 
 % initial checks, useful to check the reference system and that normals,
 % geometry, local radius, etc... are being computed correctly
-opt.checks = 0;
+opt.checks = 1;
 
 opt.fixed_COG = []; % Fixed centre of gravity coordinates [x y z];
 % If empty it is automatically computed using the
@@ -117,26 +117,25 @@ opt.bfcFlag = 1;        % Use the back-face culling within the facets visibility
 % determine their geometric shape evolution during a re-entry scenario.
 % these properties are not used for estimating the aerodynamics and
 % aerothermodynamics of the object.
-% If an assembly is made of different coherent .stl files, their properties
-% must be specified. In the following setup an example of an assembly made
-% of 6 objects is reported.
 
 opt.NnormGrid = 150; % voxels per unit length, used to estimate the mass of a uniform object
 opt.voxFlag = 0;     % To activate the voxelization for the mass distribution
+
 % at the first simulation it is automatically active
 % in order to allow the initialization.
 
-BodyPar.SimpleGeom = [1 1 1 1 1 1]; % Used for the normals coherence check, geometry is simple if
+BodyPar.SimpleGeom = [1]; % Used for the normals coherence check, geometry is simple if
 % ALL the normals on vertexes (or faces) and the vertexes vectors
 % have a positive dot product; used for the winding direction check
 % If the geometry is not simple, and the geometry has some non-coherent windings
 % it should be fixed with a proper opt.MESHing software or manually.
-BodyPar.rho = [2700 2700 1200 2700 1800 2700]; %[kg/m3] % Equivalent density of the simulated object
-BodyPar.Q_ampl = [1 1 1 1 1 1]; % used for applying an augmented heat flux on the specified object.
-BodyPar.ShellFlag = [0 0 1 1 1 0]; % if the object is a shell, it's geometric shape is not scaled with the progressive ablation
-BodyPar.ThinObjFlag = [0 1 0 0 0 0]; % if the object is thin (i.e.: a flat plate) only the two major lengths
+
+BodyPar.rho = [2700]; %[kg/m3] % Equivalent density of the simulated object
+BodyPar.Q_ampl = [1]; % used for applying an augmented heat flux on the specified object.
+BodyPar.ShellFlag = [0]; % if the object is a shell, it's geometric shape is not scaled with the progressive ablation
+BodyPar.ThinObjFlag = [0]; % if the object is thin (i.e.: a flat plate) only the two major lengths
 % are scaled with the progressive ablation
-BodyPar.shellThickness = [0.1 0 0.005 0.005 0.005 0]; % Defined shell thickness
+BodyPar.shellThickness = [0.1]; % Defined shell thickness
 BodyPar.survingFaceID_sys_global = cell(1,1);         % previously used for testing a local ablation approach
 BodyPar.ablFaceID_sys_global = cell(1,1);             % previously used for testing a local ablation approach
 
@@ -229,7 +228,7 @@ else
 end
 clc
 if opt.ThermoFlag == 1
-    FF=[-CL, CD, max(Stmap{i})*StConst{1,i}(1)];
+    FF=[-CL, CD, max(Stmap{i})*StConst{1,i}(1)];   % Q = Stc.*StConst
 else
     FF=[-CL, CD];
 end

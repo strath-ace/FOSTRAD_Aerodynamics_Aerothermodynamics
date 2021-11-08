@@ -1030,7 +1030,7 @@ for hh=1:Nalt %Km
         if Kn(H) < limKn_inf_heat
             switch lower(opt.AeroThModel)
                 case {'sc'}
-                    Stc(:,hh) = 2.1./sqrt(Re0(:,hh));             %Stagnation Point Stcanton Number, SCARAB Formulation
+                    Stc(:,hh) = 2.1./sqrt(Re0(:,hh));             %Stagnation Point Stanton Number, SCARAB Formulation
                     Stc(:,hh) = Stc(:,hh) .* (0.1+0.9*cosd(Theta)); % Stanton with SCARAB heat formulation and Lees distribution
                 case {'fr'} % fully catalytic
                     %               Fay-Riddel "theory of stagnation point heat transfer in dissociated air"
