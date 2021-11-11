@@ -54,19 +54,22 @@ Under development
 Cite:
 ------
 Please cite the following,
+```
 @inproceedings{mehta2015open,
   title={An open source hypersonic aerodynamic and aerothermodynamic modelling tool},
   author={Mehta, Piyush and Minisci, Edmondo and Vasile, Massimiliano and Walker, Andrew C and Brown, Melrose},
   booktitle={8th European Symposium on Aerothermodynamics for Space Vehicles},
   year={2015}
 }
+```
+```
 @inproceedings{falchi2017fostrad,
   title={FOSTRAD: An advanced open source tool for re-entry analysis},
   author={Falchi, Alessandro and Renato, Viola and Minisci, Edmondo and Vasile, Massimiliano},
   booktitle={15th Reinventing Space Conference},
   year={2017}
 }
-
+```
 
 Disclaimer
 ------
