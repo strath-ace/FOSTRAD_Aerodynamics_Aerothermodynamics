@@ -82,6 +82,9 @@ opt.autoSREFFlag = 0;
 
 % SS and AofA must be given as single inputs. A nested for loop may be
 % used to obtain multi-attitude database as shown in the example below.
+
+% NOTE: Be careful with the sign of the AofA, it depends on the orientation
+% of the geometry in the STL file.
 AofA = -10;  % [deg]  angle of attack
 SS = 0;    % [deg]  sideslip angle
 Roll= 0;   % [deg]  roll angle
@@ -227,8 +230,12 @@ else
     V(:,1) = V(:,1)-min(V(:,1)); % Nose-centered coordinates reference system
 end
 clc
+% NOTE: Be careful with the sign of the AofA, it depends on the orientation
+% of the geometry in the STL file.
 if opt.ThermoFlag == 1
-    FF=[-CL, CD, max(Stmap{i})*StConst{1,i}(1)];   % Q = Stc.*StConst
+    FF=[CL, CD, max(Stmap{i})*StConst{1,i}(1)];   % Q = Stc.*StConst
 else
-    FF=[-CL, CD];
+    FF=[CL, CD];
+end
+
 end
